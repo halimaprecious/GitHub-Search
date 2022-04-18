@@ -53,3 +53,11 @@ width: 25px;
     background:rgb(77, 119, 77);
     cursor: pointer;
 }
+.desc{
+    font-weight: bold;
+    font-size: 20px;
+}
+.date{
+    font-weight: bold;
+    font-size: 20px;
+}
