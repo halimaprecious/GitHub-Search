@@ -22,6 +22,14 @@ export class ProfileService {
     return this.http.get('https://api.github.com/users/' + this.username)
     .pipe(map(result => result));
   }
-
+// gets repositories
+  getRepo(){
+    return this.http.get('https://api.github.com/users/' + this.username +'/repos')
+    .pipe(map(result => result));
+  }
+  // updates user data
+  updateUser(username:string){
+    this.username =username;
+      }
 }
 
