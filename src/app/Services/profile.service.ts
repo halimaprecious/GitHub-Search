@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../user';
-import { HttpClient} from '@angular/common/http';
-import { map} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,27 +9,31 @@ import { map} from 'rxjs';
 export class ProfileService {
 
   // base_url = "https://api.github.com";
-  username:string;
-  user!:User;
-  repos!:any;
+  username: string;
+  user!: User;
+  repos!: any;
 
-  constructor(private http:HttpClient) { 
-    this.username ='halimaprecious';
+  constructor(private http: HttpClient) {
+    this.username = 'halimaprecious';
 
   }
   // github profile
-  getProfile(){
+  getProfile() {
     return this.http.get('https://api.github.com/users/' + this.username)
-    .pipe(map(result => result));
+      .pipe(map(result => result));
   }
-// gets repositories
-  getRepo(){
-    return this.http.get('https://api.github.com/users/' + this.username +'/repos')
-    .pipe(map(result => result));
+  // gets repositories
+  getRepo() {
+    return this.http.get('https://api.github.com/users/' + this.username + '/repos')
+      .pipe(map(result => result));
   }
   // updates user data
-  updateUser(username:string){
-    this.username =username;
-      }
+  updateUser(username: string) {
+    this.username = username;
+  }
+  // uprepo
+  updateRepo(repos:any){
+this.repos=repos;
+  }
 }
 
