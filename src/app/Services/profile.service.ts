@@ -1,9 +1,27 @@
 import { Injectable } from '@angular/core';
+import { User } from '../user';
+import { HttpClient} from '@angular/common/http';
+import { map} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
 
-  constructor() { }
+  // base_url = "https://api.github.com";
+  username:string;
+  user!:User;
+  repos!:any;
+
+  constructor(private http:HttpClient) { 
+    this.username ='halimaprecious';
+
+  }
+  // github profile
+  getProfile(){
+    return this.http.get('https://api.github.com/users/' + this.username)
+    .pipe(map(result => result));
+  }
+
 }
+
