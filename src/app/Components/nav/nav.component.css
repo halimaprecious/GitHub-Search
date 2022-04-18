@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Gorditas&display=swap');
+nav ul {
+  display: flex;
+  list-style: none; 
+  flex-wrap: wrap;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo a {
+  font-size: 30px;
+  text-decoration: none;
+  color: mediumseagreen;
+  font-family: 'Patua One', cursive;
+}
+
+.items {
+  display: inline-flex;
+  padding: 0 25px;
+  /* position: relative; */
+}
+
+.items a {
+  text-decoration: none;
+  padding: 0 18px;
+  color: #fff;
+  text-transform:capitalize;
+}
