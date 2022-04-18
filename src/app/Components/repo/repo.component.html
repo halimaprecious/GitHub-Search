@@ -1,1 +1,27 @@
-<p>repo works!</p>
+<div class="container mt-4">
+    <form class="search-form"  >
+        <div class="form-group search-bar">
+            <input [(ngModel)]="username"  name="username" value="" type="text" placeholder="Search Repositories">
+            <button type="submit" (click)="searchInfo()"><span><i class="fa fa-search" aria-hidden="true"></i></span></button>
+        </div>
+     </form>
+ 
+     <div class="card">
+        <div class="card-header text-center text-white">
+            <h4>GitHub Repositories</h4>
+        </div>
+        <div *ngFor=" let repo of repos" class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-around">
+                    <p class="des text-white text-center "> <span class="na display-6"> <br>{{repo.name}}</span><br>
+                        <span class="desc text-white text-center "> Description:</span> <br>{{repo.description}}
+                        <br>
+                        <small class="date text-white mt-4"> <br>Created on : {{repo.created_at|date}}</small> <br>
+                        <span><a href="{{repo.repo_url}}" class="text-info" target="_blank">View on
+                                GitHub</a></span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

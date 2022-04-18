@@ -1,1 +1,66 @@
-<p>profile works!</p>
+<div class="container mt-5">
+    <div class="row1">
+        <form class="search-form">
+            <div class="form-group search-bar">
+                <input [(ngModel)]="username" name="username" value="" type="text" placeholder="Search Github user">
+                <button type="submit" (click)="searchInfo()"><span><i class="fa fa-search"
+                            aria-hidden="true"></i></span></button>
+            </div>
+        </form>
+    </div>
+
+    <div *ngIf='users' class="row mt-5">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{{users.avatar_url}}" class="img-circle" alt="profile">
+            </div>
+            <div class="card-body">
+                <h4 class="card-title text-white">{{users.login}}</h4>
+                <p class="card-text text-white">Bio:{{users.bio}}</p>
+                <a href="{{users.html_url}}" target="_blank" class="btn btn-success btn-sm">profile</a>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="det col-md-6">
+            <!-- profiledata -->
+            <div class="card card2">
+                <div class="card-header d-flex justify-content-between">
+                    <span class="badge bg-info text-black ">Followers: {{users.followers}}</span>
+                    <span class="badge bg-danger text-black">Following: {{users.following}}</span>
+                    <span class="badge bg-warning  text-black">Public Repos:{{users.public_repos}}</span>
+                </div>
+                <div class="card-body body2">
+                    <ul class="list-group ">
+                        <li class="list-group-item text-white">Username: <span
+                                class="font-weight-bold">{{users.login}}</span></li>
+                        <li class="list-group-item text-white">Email: {{users.email}}</li>
+                        <li class="list-group-item text-white">Location: {{users.location}}</li>
+                        <li class="list-group-item text-white">Member since : {{users.created_at|date}}</li>
+                        <!-- <li class="list-group-item text-white">ProfileUrl: {{users.html_url}}</li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- display repositoris -->
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center text-white">
+                <h4>GitHub Repositories</h4>
+            </div>
+            <div *ngFor=" let repo of repos" class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-around">
+                        <p class="des text-white text-center "> <span class="na display-6"> <br>{{repo.name}}</span><br>
+                            <span class="desc text-white text-center "> Description:</span> <br>{{repo.description}}
+                            <br>
+                            <small class="date text-white mt-4"> <br>Created on : {{repo.created_at|date}}</small> <br>
+                            <span><a href="{{repo.repo_url}}" class="text-info" target="_blank">View on
+                                    GitHub</a></span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
