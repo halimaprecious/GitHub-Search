@@ -1,27 +1,41 @@
-import { ProfileService } from './../../Services/profile.service';
+import { Repo } from './../../repo';
+
+import { User} from '../../user';
 import { Component, OnInit } from '@angular/core';
-// import { User } from 'src/app/user';
+import { ProfileService } from 'src/app/Services/profile.service';
+
 @Component({
-  selector: 'app-profile',
+  selector: 'app-profiles',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfilesComponent implements OnInit {
 
-  users: any=[];
+  users: any =[]
   repos:any =[];
   username!:string;
-
-  constructor(private profileService:ProfileService ) { 
-  this.profileService.getProfile().subscribe(users=>{
+  constructor(private profileService: ProfileService) { 
+ 
+    this.profileService.getProfile().subscribe(users=>{
     this.users = users
     })
     this.profileService.getRepo().subscribe(repos=>{
       this.repos = repos
       })
-
-    }
-    ngOnInit(): void {
-      throw new Error('Method not implemented.');
-    }
   }
+// callback
+ searchInfo(){
+   this.profileService.updateUser(this.username)
+   this.profileService.getProfile().subscribe(users=>{
+    this.users = users
+    })
+    this.profileService.getRepo().subscribe(repos=>{
+      this.repos = repos
+    })
+ }
+
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
+}
