@@ -1,5 +1,6 @@
+import { ProfileService } from './../../Services/profile.service';
 import { Component, OnInit } from '@angular/core';
-
+// import { User } from 'src/app/user';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  users: any=[];
+  repos:any =[];
+  username!:string;
 
-  ngOnInit(): void {
+  constructor(private profileService:ProfileService ) { 
+  this.profileService.getProfile().subscribe(users=>{
+    this.users = users
+    })
+    this.profileService.getRepo().subscribe(repos=>{
+      this.repos = repos
+      })
+
+    }
+    ngOnInit(): void {
+      throw new Error('Method not implemented.');
+    }
   }
-
-}
