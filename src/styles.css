@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap'*/
+ /* font-family: 'Source Code Pro', monospace; */
+
+ @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+ /* font-family: 'Patua One', cursive; */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+body{
+   
+   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.856), rgba(0, 0, 0, 0.555)),url("src/assets/programming.png");
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+    height: 100vh; 
+}
