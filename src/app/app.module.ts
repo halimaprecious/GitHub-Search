@@ -5,22 +5,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './Components/nav/nav.component';
 import { HomeComponent } from './Components/home/home.component';
-import { ProfileComponent } from './Components/profile/profile.component';
+import { ProfilesComponent } from './Components/profile/profile.component';
 import { RepoComponent } from './Components/repo/repo.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ProfileService } from './Services/profile.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    ProfileComponent,
-    RepoComponent
+    ProfilesComponent,
+    RepoComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
