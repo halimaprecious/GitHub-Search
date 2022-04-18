@@ -1,27 +1,65 @@
-# GitSearch
+# GithubSearch
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+A website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories. <br>
+[Live Link]()
 
-## Development server
+## Contributor
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Precious Halima
 
-## Code scaffolding
+## Technologies used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Javascript
+* CSS
+* HTML
+* Bootstrap
+* Typescript
+* Angular Js
 
-## Build
+### Requirements
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+NodeJs and Angular installed or an IDE with the same functionality. VS Code is a great choice.
 
-## Running unit tests
+### Setup and instruction
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository [here](https://github.com/halimaprecious/GitHub-Search.git).
+2. Extract and open the folder.
+3. Run **ng serve --open** from the console.
+4. Navigate to `http://localhost:4200/` on your preferred browser.
 
-## Running end-to-end tests
+## Development
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To fix a bug or enhance an existing module, follow these steps:
+- Fork the repo
+- Create a new branch (git checkout -b improve-feature)
+- Make the appropriate changes in the files
+- Add changes to reflect the changes made
+- Commit your changes (git commit -am 'Improve feature')
+- Push to the branch (git push origin improve-feature)
+- Create a Pull Request
 
-## Further help
+## Behaviour Driven Development
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+BDD focuses on how the user will interact with the application.
+
+What you will see and experience:
+
+1. Landing page with an image and a form.
+2. Enter a username and click on **Search icon**.
+3. A profile of the user including their avatar is displayed.
+4. Scroll down to view a list of the user'd repositories.
+5. Click on the **Search New User** to display the form and search for a new user.
+
+## Known Bugs
+
+If you find a bug or would like to request a new function, reach out to me via<br> Email:halimaprecious3@gmail.com  or on [LinkedIn](https://www.linkedin.com/in/precious-halima)
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+Copyright (c) 2022 **Precious Halima**
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
